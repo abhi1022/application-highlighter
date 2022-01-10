@@ -1,0 +1,10 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/development-tier/demo-factorial', '.']
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/development-tier/demo-factorial']
+
+images:
+  - gcr.io/development-tier/demo-factorial
